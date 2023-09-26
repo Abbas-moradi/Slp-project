@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+from .managers import UserManager
 
 
 class User(AbstractBaseUser):
@@ -10,6 +11,7 @@ class User(AbstractBaseUser):
     is_delete = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
 
+    objects = UserManager()
 
     USERNAME_FIELD = 'phone'
     REQUIRED_FIELD = ['email',]
