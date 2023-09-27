@@ -14,7 +14,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'phone'
-    REQUIRED_FIELD = ['email',]
+    REQUIRED_FIELDS = ['email', 'full_name']
 
     def __str__(self) -> str:
         return self.email
@@ -22,9 +22,9 @@ class User(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         return True
     
-    def has_madule_perms(self, app_lable):
+    def has_module_perms(self, app_label):
         return True
-    
+
     @property
     def is_staff(self):
         return self.is_admin 
