@@ -34,6 +34,9 @@ class UserChangeForm(forms.ModelForm):
 
 
 class UserRegisterationForm(forms.Form):
-    email = forms.EmailField(label='ایمیل')
     phone = forms.CharField(max_length=12, label='تلفن')
+
+
+class VerifyCodeForm(forms.Form):
+    code = forms.IntegerField()
 

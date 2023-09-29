@@ -30,5 +30,12 @@ class User(AbstractBaseUser):
         return self.is_admin 
 
 
+class OtpCodeRegister(models.Model):
+    phone = models.CharField(max_length=12)
+    code = models.PositiveSmallIntegerField()
+    created = models.DateField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f'{self.phone} - {self.code} - {self.created}'
 
 
