@@ -3,9 +3,10 @@ from django.views import View
 
 
 class Home(View):
+    template_name = 'index.html'
 
     def get(self, request):
-        pass
+        return render(request, self.template_name)
     
     def post(self, request):
         pass
