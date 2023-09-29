@@ -24,15 +24,16 @@ class UserRegisterView(View):
                 'phone_number': self.cleaned_data['phone'],
             }
             return redirect('accounts:verify_code')
-        return redirect('home:home')
+        return render(request,'accounts/register.html', {'form':form})
 
 
 class UserRegisterVerifyCode(View):
     form_class = VerifyCodeForm
+    template_name = 'accounts/verify_code.html'
 
     def get(self, request):
         form = self.form_class
-        return render(request, 'accounts/verify_code.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
         user_session = request.session['user_register_info']
@@ -47,7 +48,7 @@ class UserRegisterVerifyCode(View):
                 return redirect('home:home')
             else:
                 messages.error(request, 'کد وارد شده اشتباه است', 'danger')
-                return redirect('accounts/verify_code')
+                return redirect(self.template_name)
         return redirect('home:home')
 
 
