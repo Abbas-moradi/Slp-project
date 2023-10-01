@@ -28,3 +28,13 @@ class Category(models.Model):
         return f'{self.name} - {self.favicon} - {self.description} - {self.status}'
     
 
+class ImageGallery(models.Model):
+    name = models.CharField(max_length=150)
+    Category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    descriptoin = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='gallery/')
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return f'{self.name} - {self.created} - {self.status}'
