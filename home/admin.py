@@ -4,7 +4,7 @@ from .models import Articles, Category, ImageGallery
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'favicon', 'status')
+    list_display = ('name', 'description', 'favicon', 'color_status', 'status')
 
 
 @admin.register(Articles)
