@@ -1,4 +1,24 @@
 /********** Template CSS **********/
+.navbar {
+    font-family: "B Homa", sans-serif;   
+}
+
+.h-100 {
+    font-family: "B Homa", sans-serif; 
+    font-size: 15px;
+}
+
+.dropdown-item {
+    font-family: "B Homa", sans-serif; 
+    font-size: 15px;
+}
+
+.m-0 {
+    font-family: "B Homa", sans-serif; 
+    font-size: 30px;  
+}
+
+
 .text-white {
     font-family: "B Homa", sans-serif;
 }

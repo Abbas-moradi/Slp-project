@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="utf-8">
-    <title>Kider - Preschool Website Template</title>
+    <title>مرجع گفتار درمانی</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,41 +35,40 @@
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only">Slp</span>
             </div>
-        </div>
+        </div> -->
         <!-- Spinner End -->
 
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
-                <h1 class="m-0 text-primary"><i class="fa fa-book-reader me-3"></i>Kider</h1>
+                <h1 class="m-0 text-primary"><i class="fa fa-book-reader me-3"></i> گفتار درمانی </h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
-                    <a href="classes.html" class="nav-item nav-link">Classes</a>
+                    <a href="index.html" class="nav-item nav-link active">خانه</a>
+                    <a href="about.html" class="nav-item nav-link">درباره ما</a>
+                    <a href="classes.html" class="nav-item nav-link">دوره ها</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
-                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >صفحه ها</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0" dir="rtl">
+                            <a href="facility.html" class="dropdown-item" dir="rtl">اوتیسم</a>
+                            <a href="team.html" class="dropdown-item">بلع</a>
+                            <a href="call-to-action.html" class="dropdown-item">گفتار درمانی</a>
+                            <a href="appointment.html" class="dropdown-item">واژگان</a>
+                            <a href="testimonial.html" class="dropdown-item">مشاوره</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="contact.html" class="nav-item nav-link">ارتباط با ما</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{% url 'accounts:user_register' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block"> پیوستن به ما <i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -121,7 +120,7 @@
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <span class="bg-primary"></span>
@@ -508,7 +507,7 @@
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Make Appointment</h1>
+                                <h1 class="mb-4">سوالی دارید بپرسید</h1>
                                 <form>
                                     <div class="row g-3">
                                         <div class="col-sm-6">
