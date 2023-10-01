@@ -30,16 +30,17 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'home/css/style.css' %}" rel="stylesheet">
+    
 </head>
 
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Slp</span>
             </div>
-        </div> -->
+        </div>
         <!-- Spinner End -->
 
 
@@ -66,6 +67,7 @@
                             <a href="testimonial.html" class="dropdown-item">مشاوره</a>
                         </div>
                     </div>
+                    <a href="#" class="nav-item nav-link">خاطرات درمان</a>
                     <a href="contact.html" class="nav-item nav-link">ارتباط با ما</a>
                 </div>
                 <a href="{% url 'accounts:user_register' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block"> پیوستن به ما <i class="fa fa-arrow-right ms-3"></i></a>
@@ -75,33 +77,20 @@
 
 
         <!-- Carousel Start -->
+        <div class="header">
         <div class="container-fluid p-0 mb-5">
-            <div class="owl-carousel header-carousel position-relative">
+            <div class="position-relative">
                 <div class="owl-carousel-item position-relative">
                     <img class="img-fluid" src="{% static 'home/img/carousel-1.jpg' %}" alt="">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background:  rgba(0, 0, 0, .2);">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-2 text-white animated slideInDown mb-4">The Best Kindergarten School For Your Child</h1>
+                                    <br><br>
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">گفتار درمانی مریم کشاورز</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="{% static 'home/img/carousel-2.jpg' %}" alt="">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
-                                    <h1 class="display-2 text-white animated slideInDown mb-4">Make A Brighter Future For Your Child</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    <!-- <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> -->
                                 </div>
                             </div>
                         </div>
@@ -109,6 +98,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <!-- Carousel End -->
 
 
@@ -116,33 +106,33 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">School Facilities</h1>
+                    <h1 class="mb-3">توضیحات مختصر درباره گفتار درمانی</h1>
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <span class="bg-primary"></span>
-                                <i class="fa fa-bus-alt fa-3x text-primary"></i>
-                                <span class="bg-primary"></span>
-                            </div>
-                            <div class="facility-text bg-primary">
-                                <h3 class="text-primary mb-3">School Bus</h3>
-                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="facility-item">
                             <div class="facility-icon bg-success">
                                 <span class="bg-success"></span>
-                                <i class="fa fa-futbol fa-3x text-success"></i>
+                                <i class="fa fa-puzzle-piece fa-3x text-success"></i>
                                 <span class="bg-success"></span>
                             </div>
                             <div class="facility-text bg-success">
-                                <h3 class="text-success mb-3">Playground</h3>
-                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                                <h3 class="text-success mb-3">اوتیسم</h3>
+                                <p class="mb-0 text-success">autism spectrum disorder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-primary">
+                                <span class="bg-primary"></span>
+                                <i class="fa fa-calendar-check  fa-3x text-primary"></i>
+                                <span class="bg-primary"></span>
+                            </div>
+                            <div class="facility-text bg-primary">
+                                <a href=""><h3 class="text-primary mb-3">تاخیر گفتار</h3></a>
+                                <p class="mb-0 text-primary">late talker</p>
                             </div>
                         </div>
                     </div>
@@ -150,12 +140,12 @@
                         <div class="facility-item">
                             <div class="facility-icon bg-warning">
                                 <span class="bg-warning"></span>
-                                <i class="fa fa-home fa-3x text-warning"></i>
+                                <i class="fa fa-language fa-3x text-warning"></i>
                                 <span class="bg-warning"></span>
                             </div>
                             <div class="facility-text bg-warning">
-                                <h3 class="text-warning mb-3">Healthy Canteen</h3>
-                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                                <h3 class="text-warning mb-3">اختلال تلفظی</h3>
+                                <p class="mb-0 text-warning">speech sound disorder</p>
                             </div>
                         </div>
                     </div>
@@ -163,12 +153,12 @@
                         <div class="facility-item">
                             <div class="facility-icon bg-info">
                                 <span class="bg-info"></span>
-                                <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                                <i class="fa fa-comments fa-3x text-info"></i>
                                 <span class="bg-info"></span>
                             </div>
                             <div class="facility-text bg-info">
-                                <h3 class="text-info mb-3">Positive Learning</h3>
-                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                                <h3 class="text-info mb-3">لکنت</h3>
+                                <p class="mb-0 text-info">stuttering</p>
                             </div>
                         </div>
                     </div>
@@ -232,7 +222,7 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Become A Teacher</h1>
+                                <h1 class="mb-4">آموزش های کاربردی</h1>
                                 <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
                                     Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
                                 </p>
@@ -250,7 +240,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">School Classes</h1>
+                    <h1 class="mb-3">آموزش های کاربردی</h1>
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
@@ -560,15 +550,15 @@
 
 
         <!-- Team Start -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5" >
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Popular Teachers</h1>
+                    <h1 class="mb-3">نکات ارزشمند از زبان اساتید</h1>
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
                         eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle w-75" src="{% static 'home/img/team-1.jpg' %}" alt="">
                             <div class="team-text">
@@ -617,17 +607,16 @@
 
 
         <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5" dir="ltr">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Our Clients Say!</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <h1 class="mb-3">نظرات کاربران</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                     <div class="testimonial-item bg-light rounded p-5">
                         <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/testimonial-1.jpg' %}" style="width: 90px; height: 90px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/msg.png' %}" style="width: 90px; height: 90px;">
                             <div class="ps-3">
                                 <h3 class="mb-1">Client Name</h3>
                                 <span>Profession</span>
@@ -638,7 +627,7 @@
                     <div class="testimonial-item bg-light rounded p-5">
                         <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/testimonial-2.jpg' %}" style="width: 90px; height: 90px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/msg.png' %}" style="width: 90px; height: 90px;">
                             <div class="ps-3">
                                 <h3 class="mb-1">Client Name</h3>
                                 <span>Profession</span>
@@ -649,7 +638,7 @@
                     <div class="testimonial-item bg-light rounded p-5">
                         <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/testimonial-3.jpg' %}" style="width: 90px; height: 90px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static 'home/img/msg.png' %}" style="width: 90px; height: 90px;">
                             <div class="ps-3">
                                 <h3 class="mb-1">Client Name</h3>
                                 <span>Profession</span>
@@ -668,7 +657,7 @@
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <h3 class="text-white mb-4">در تماس باشید</h3>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
@@ -680,7 +669,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <h3 class="text-white mb-4">دسترسی سریع</h3>
                         <a class="btn btn-link text-white-50" href="">About Us</a>
                         <a class="btn btn-link text-white-50" href="">Contact Us</a>
                         <a class="btn btn-link text-white-50" href="">Our Services</a>
@@ -688,7 +677,7 @@
                         <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Photo Gallery</h3>
+                        <h3 class="text-white mb-4">گالری</h3>
                         <div class="row g-2 pt-2">
                             <div class="col-4">
                                 <img class="img-fluid rounded bg-light p-1" src="{% static 'home/img/classes-1.jpg' %}" alt="">
@@ -711,8 +700,8 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Newsletter</h3>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <h3 class="text-white mb-4">اخبار</h3>
+                        <p>برای دریافت اخبار و مقالات جدید ایمیل خود را وارد کنید.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
                             <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                             <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
