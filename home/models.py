@@ -38,3 +38,12 @@ class ImageGallery(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name} - {self.created} - {self.status}'
+    
+
+class NewsUserEmail(models.Model):
+    email = models.EmailField(unique=True)
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return f'{self.email} - {self.created} - {self.status}'
