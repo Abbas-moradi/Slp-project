@@ -35,6 +35,7 @@ class UserChangeForm(forms.ModelForm):
 
 class UserRegisterationForm(forms.Form):
     phone = forms.CharField(max_length=12, label='تلفن')
+    email = forms.EmailField()
 
     def clean_phone(self):
         phone = self.cleaned_data['phone']
@@ -42,6 +43,13 @@ class UserRegisterationForm(forms.Form):
         if user:
             raise ValidationError('این شماره تلفن از قبل وجود دارد')
         return phone
+    
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        user = User.objects.filter(email=self.cleaned_data['email']).exists()
+        if user:
+            raise ValidationError('این ایمیل از قبل وجود دارد')
+        return email
 
 
 class VerifyCodeForm(forms.Form):

@@ -3,6 +3,6 @@ from . import views
 
 app_name = 'core'
 
-urlpattern = [
+urlpatterns = [
     
 ]

@@ -44,7 +44,7 @@
                     <div class="row g-0">
                         <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="titr" >شماره تلفن همراه خود را وارد کنید</h1>
+                                <h1 class="titr" >اطلاعات زیر را وارد کنید</h1>
                                 <br>
                                 <form method="post" action="#">
                                     {% csrf_token %}
@@ -53,6 +53,11 @@
                                             <div class="form-floating">
                                                 <input type="phone" class="form-control border-0" id="phone" name="phone" placeholder="شماره همراه">
                                                 <label for="phone">تلفن همراه</label>
+                                                <br>
+                                            </div>
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control border-0" id="email" name="email" placeholder="ایمیل">
+                                                <label for="phone">ایمیل</label>
                                                 <br>
                                             </div>
                                         </div>
