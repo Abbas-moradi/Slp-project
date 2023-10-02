@@ -84,10 +84,10 @@
                     <img class="img-fluid" src="{% static 'home/img/carousel-1.jpg' %}" alt="">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background:  rgba(0, 0, 0, .2);">
                         <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
+                            <div class="head_img row justify-content-start">
+                                <div class="head_img col-10 col-lg-8">
                                     <br><br>
-                                    <h1 class="display-2 text-white animated slideInDown mb-4">گفتار درمانی مریم کشاورز</h1>
+                                    <h1 class="head_img display-2 text-white animated slideInDown mb-4">گفتار درمانی مریم کشاورز</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
                                     <!-- <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
                                     <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> -->
@@ -203,7 +203,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">آموزش های کاربردی</h1>
+                    <h1 class="mb-3">نکات آموزشی</h1>
                     <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
@@ -652,10 +652,13 @@
                     <div class="news col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">اخبار</h3>
                         <p class="news">برای دریافت اخبار و مقالات جدید ایمیل خود را وارد کنید.</p>
-                        <div class="news position-relative mx-auto" style="max-width: 400px;" dir="ltr">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">ارسال</button>
-                        </div>
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <div class="news position-relative mx-auto" style="max-width: 400px;" dir="ltr">
+                                <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="ایمیل خود را وارد کنید">
+                                <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">ارسال</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
