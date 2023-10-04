@@ -65,3 +65,14 @@ class SmallDescription(models.Model):
 
     def __str__(self) -> str:
         return f'{self.title}-{self.created}-{self.status}'
+    
+
+class SiteHeader(models.Model):
+    img = models.ImageField(upload_to='header/')
+    title = models.CharField(max_length=250)
+    description = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f'{self.title} - {self.created} - {self.status}'

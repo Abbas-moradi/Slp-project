@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hint, UserQuastion, Articles, Category, SmallDescription
+from .models import Hint, UserQuastion, Articles, Category, SmallDescription, SiteHeader
 
 
 @admin.register(UserQuastion)
@@ -24,4 +24,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(SmallDescription)
 class SmallDescriptionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created', 'status')
+
+
+@admin.register(SiteHeader)
+class SiteHeaderAdmin(admin.ModelAdmin):
     list_display = ('title', 'created', 'status')
