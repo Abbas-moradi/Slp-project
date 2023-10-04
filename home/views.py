@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.views import View
 from .models import ImageGallery, NewsUserEmail
-from core.models import Category, SmallDescription, SiteHeader
+from core.models import Category, SmallDescription, SiteHeader, Articles
 from .forms import UserNewsEmailForm
 from django.contrib import messages
 import random
@@ -17,12 +17,14 @@ class Home(View):
         img = ImageGallery.objects.filter(status=True)
         description = SmallDescription.objects.filter(status=True)
         site_header = SiteHeader.objects.filter(status=True)
+        latest_article = Articles.objects.filter(status=True).latest('created')
         random_images = random.sample(list(img), 6)
         return render(request, self.template_name, {'categories': category, 
                                                     'image': random_images, 
                                                     'email_form': self.email_form,
                                                     'description': description,
-                                                    'header': site_header})
+                                                    'header': site_header,
+                                                    'article': latest_article})
     
     def post(self, request):
         email_form = UserNewsEmailForm(request.POST)

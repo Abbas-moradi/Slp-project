@@ -44,6 +44,14 @@ class Articles(models.Model):
     def __str__(self) -> str:
         return f'{self.title} - {self.author} - {self.created}'
     
+    def get_first_paragraph(self):
+        first_paragraph = self.content.split('.')
+
+        if first_paragraph:
+            return first_paragraph[0]+'.'
+        else:
+            return ""
+    
 
 class Category(models.Model):
     name = models.CharField(max_length=150)
