@@ -1,19 +1,4 @@
 from django.db import models
-
-
-class Articles(models.Model):
-    title = models.CharField(max_length=150)
-    content = models.TextField()
-    image = models.ImageField(upload_to='posts/', null=True, blank=True)
-    tags = models.CharField(max_length=255)
-    author = models.CharField(max_length=150)
-    created = models.DateField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    status = models.BooleanField(default=True)
-    is_delete = models.BooleanField(default=False)
-
-    def __str__(self) -> str:
-        return f'{self.title} - {self.author} - {self.created}'
     
 
 class Category(models.Model):

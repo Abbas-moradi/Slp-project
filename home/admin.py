@@ -1,15 +1,10 @@
 from django.contrib import admin
-from .models import Articles, Category, ImageGallery, NewsUserEmail
+from .models import Category, ImageGallery, NewsUserEmail
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'favicon', 'color_status', 'status')
-
-
-@admin.register(Articles)
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created', 'status')
 
 
 @admin.register(ImageGallery)
