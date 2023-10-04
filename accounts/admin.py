@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import Group
-from .models import User, OtpCodeRegister
+from .models import User, OtpCodeRegister, UserComment
 
 
 @admin.register(OtpCodeRegister)
@@ -29,6 +29,11 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ('email', 'full_name')
     ordering = ('full_name', )
     filter_horizontal = ()  # because I don't have a permission yet, I put this as an empty tuple
+
+
+@admin.register(UserComment)
+class UserCommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'title', 'status', 'created')
 
 
 admin.site.unregister(Group)
