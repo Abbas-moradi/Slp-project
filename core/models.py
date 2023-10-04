@@ -55,3 +55,13 @@ class Category(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name} - {self.description}'
+    
+
+class SmallDescription(models.Model):
+    title = models.CharField(max_length=250)
+    description = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f'{self.title}-{self.created}-{self.status}'

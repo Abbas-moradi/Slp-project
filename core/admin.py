@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hint, UserQuastion, Articles, Category
+from .models import Hint, UserQuastion, Articles, Category, SmallDescription
 
 
 @admin.register(UserQuastion)
@@ -20,3 +20,8 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'favicon', 'color_status', 'status')
+
+
+@admin.register(SmallDescription)
+class SmallDescriptionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created', 'status')

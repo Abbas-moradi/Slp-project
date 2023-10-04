@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.views import View
-from .models import Category, ImageGallery, NewsUserEmail
+from .models import ImageGallery, NewsUserEmail
+from core.models import Category
 from .forms import UserNewsEmailForm
 from django.contrib import messages
 import random

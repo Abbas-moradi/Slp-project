@@ -21,3 +21,4 @@ class NewsUserEmail(models.Model):
 
     def __str__(self) -> str:
         return f'{self.email} - {self.created} - {self.status}'
+    
