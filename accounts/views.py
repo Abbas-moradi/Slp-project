@@ -4,6 +4,7 @@ from .forms import UserRegisterationForm, VerifyCodeForm
 from utils import send_otp_code
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
+from .tasks import email_sender
 import random
 from .models import OtpCodeRegister, User
 
@@ -24,6 +25,7 @@ class UserRegisterView(View):
             print(random_code)
            
             send_otp_code(form.cleaned_data['phone'], random_code)
+            email_sender(random_code, form.cleaned_data['email'])
             OtpCodeRegister.objects.create(phone=form.cleaned_data['phone'], code=random_code)
             request.session['user_register_info'] = {
                 'phone_number': form.cleaned_data['phone'],
