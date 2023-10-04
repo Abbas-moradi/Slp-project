@@ -1,16 +1,5 @@
 from django.db import models
-    
-
-class Category(models.Model):
-    name = models.CharField(max_length=150)
-    favicon = models.CharField(max_length=30, null=True, blank=True)
-    description = models.CharField(max_length=250, blank=True)
-    color_status = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='category/', null=True, blank=True)
-    status = models.BooleanField(default=True)
-
-    def __str__(self) -> str:
-        return f'{self.name} - {self.description}'
+from core.models import Category
     
 
 class ImageGallery(models.Model):
