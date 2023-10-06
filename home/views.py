@@ -4,12 +4,14 @@ from django.views import View
 from .models import ImageGallery, NewsUserEmail
 from core.models import Category, SmallDescription, SiteHeader, Articles
 from .forms import UserNewsEmailForm
+from core.forms import UserQuestionForm
 from django.contrib import messages
 import random
 
 
 class Home(View):
     email_form = UserNewsEmailForm
+    question_form = UserQuestionForm
     template_name = 'index.html'
 
     def get(self, request):
@@ -24,7 +26,8 @@ class Home(View):
                                                     'email_form': self.email_form,
                                                     'description': description,
                                                     'header': site_header,
-                                                    'article': latest_article})
+                                                    'article': latest_article,
+                                                    'question_form': self.question_form})
     
     def post(self, request):
         email_form = UserNewsEmailForm(request.POST)

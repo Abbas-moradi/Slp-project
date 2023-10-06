@@ -294,36 +294,43 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">سوالی دارید بپرسید</h1>
-                                <form>
+                                <form method="post" action="{% url 'core:question_register' %}">
+                                    {% csrf_token %}
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="موضوع">
-                                                <label for="gname">موضوع</label>
+                                                <input type="text" class="form-control border-0" id="issue" name="issue" placeholder="موضوع">
+                                                <label for="issue">موضوع</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="ایمیل">
-                                                <label for="gmail">ایمیل</label>
+                                                <input type="email" class="form-control border-0" id="email" name="email" placeholder="ایمیل">
+                                                <label for="email">ایمیل</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder=" نام کودک">
-                                                <label for="cname">نام کودک</label>
+                                                <input type="text" class="form-control border-0" id="child_name" name="child_name" placeholder=" نام کودک">
+                                                <label for="child_name">نام کودک</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder=" سن کودک">
-                                                <label for="cage">سن کودک</label>
+                                                <input type="text" class="form-control border-0" id="child_age" name="child_age" placeholder=" سن کودک">
+                                                <label for="child_age">سن کودک</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="phone" name="phone" placeholder=" تلفن تماس">
+                                                <label for="phone">تلفن تماس</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="توضیحات خود را وارد کنید" id="message" style="height: 100px"></textarea>
-                                                <label for="message">توضیحات خود را وارد کنید</label>
+                                                <input type="textarea" class="form-control border-0" placeholder="توضیحات خود را وارد کنید" id="desc" name="desc" style="height: 100px">
+                                                <label for="desc">توضیحات خود را وارد کنید</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
