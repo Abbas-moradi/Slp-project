@@ -20,8 +20,9 @@ class UserRegisterView(View):
     def post(self, request):
         form = self.form_class(request.POST)
         if form.is_valid():
-            code_instance = OtpCodeRegister.objects.get(phone=form.cleaned_data['phone'])
+            code_instance = OtpCodeRegister.objects.filter(phone=form.cleaned_data['phone']).exists()
             if code_instance:
+                code_instance = OtpCodeRegister.objects.get(phone=form.cleaned_data['phone'])
                 random_code = code_instance.code
             else:
                 random_code = random.randint(10000, 99999)
@@ -59,7 +60,7 @@ class UserRegisterVerifyCode(View):
                 return redirect('home:home')
             else:
                 messages.error(request, 'کد وارد شده اشتباه است', 'danger')
-                return redirect(self.template_name)
+                return redirect('accounts:verify_code')
         return redirect('home:home')
 
 

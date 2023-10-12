@@ -1,6 +1,18 @@
 from django.db import models
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=150)
+    favicon = models.CharField(max_length=30, null=True, blank=True)
+    description = models.CharField(max_length=250, blank=True)
+    color_status = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='category/', null=True, blank=True)
+    status = models.BooleanField(default=True)
+
+    def __str__(self) -> str:
+        return f'{self.name} - {self.description}'
+    
+
 class UserQuastion(models.Model):
     issue = models.CharField(max_length=250)
     child_name = models.CharField(max_length=150)
@@ -16,6 +28,7 @@ class UserQuastion(models.Model):
 
 
 class Hint(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     content = models.TextField()
     image = models.ImageField(upload_to='hint/')
@@ -31,6 +44,7 @@ class Hint(models.Model):
 
 
 class Articles(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     content = models.TextField()
     image = models.ImageField(upload_to='posts/', null=True, blank=True)
@@ -52,17 +66,6 @@ class Articles(models.Model):
         else:
             return ""
     
-
-class Category(models.Model):
-    name = models.CharField(max_length=150)
-    favicon = models.CharField(max_length=30, null=True, blank=True)
-    description = models.CharField(max_length=250, blank=True)
-    color_status = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='category/', null=True, blank=True)
-    status = models.BooleanField(default=True)
-
-    def __str__(self) -> str:
-        return f'{self.name} - {self.description}'
     
 
 class SmallDescription(models.Model):
@@ -84,3 +87,15 @@ class SiteHeader(models.Model):
 
     def __str__(self) -> str:
         return f'{self.title} - {self.created} - {self.status}'
+    
+
+class Video(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    release_date = models.DateField()
+    created = models.DateField(auto_now_add=True)
+    status = models.BooleanField(default=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
