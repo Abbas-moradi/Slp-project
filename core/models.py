@@ -92,7 +92,7 @@ class SiteHeader(models.Model):
 class Video(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    release_date = models.DateField()
+    video = models.FileField(upload_to='films/')
     created = models.DateField(auto_now_add=True)
     status = models.BooleanField(default=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
